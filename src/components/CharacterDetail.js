@@ -1,9 +1,13 @@
 import '../styles/components/characterDetail.scss';
 import { Link } from 'react-router-dom';
 
-const CharacterDetail = ({ characterFound }, { errorMessage }) => {
+const CharacterDetail = ({ characterFound }, props) => {
   if (characterFound === undefined) {
-    return <p className="error-message">{errorMessage}</p>;
+    return (
+      <p className="error-message">
+        ¡Ups! El personaje que buscas no existe...
+      </p>
+    );
   } else {
     return (
       <>

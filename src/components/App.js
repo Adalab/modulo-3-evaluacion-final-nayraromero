@@ -63,7 +63,13 @@ function App() {
         />
         <Route
           path="/character/:characterId"
-          element={<CharacterDetail characterFound={characterFound} />}
+          element={
+            <CharacterDetail
+              characterFound={characterFound}
+              filterByName={filterByName}
+              errorMessage={errorMessage}
+            />
+          }
         />
       </Routes>
     </>
