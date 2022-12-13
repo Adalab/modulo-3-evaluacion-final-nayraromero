@@ -1,3 +1,11 @@
+@font-face {
+  font-family: 'Rick-Morty';
+  src: url('../../fonts/font.ttf') format('truetype');
+  font-style: normal;
+  font-weight: normal;
+}
+
 * {
   background-color: black;
+  font-family: 'Rick-Morty';
 }

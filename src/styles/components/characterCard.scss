@@ -1,13 +1,32 @@
-.card {
-  display: flex;
-  flex-direction: column;
+* {
+  font-family: Arial, Helvetica, sans-serif;
 }
 .character-list {
-  margin-top: 20px;
+  padding: 30px;
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+}
+.character-image {
+  width: 180px;
+  height: 180px;
+}
+.character-list:hover {
+  border: 3px solid #04b4c4;
+  border-radius: 20px;
+  border-style: double;
 }
 .character-info {
+  margin: 0px;
   background-color: #04b4c4;
   color: white;
-  width: 18.75em;
-  margin: 0px;
+}
+.name {
+  font-size: 16px;
+}
+.specie {
+  font-size: 14px;
+}
+a {
+  text-decoration: none;
 }

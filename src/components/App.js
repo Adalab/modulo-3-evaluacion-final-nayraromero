@@ -6,6 +6,8 @@ import CharacterList from './CharacterList';
 import { Routes, Route, matchPath, useLocation } from 'react-router-dom';
 import Filter from './Filter';
 import CharacterDetail from './CharacterDetail';
+import Header from './Header';
+import logo from '../images/logo.png';
 
 function App() {
   //VARIABLES ESTADO
@@ -43,25 +45,28 @@ function App() {
     (character) => character.id === parseInt(characterId)
   );
   return (
-    <Routes>
-      <Route
-        path="/"
-        element={
-          <>
-            <Filter
-              handleFilterName={handleFilterName}
-              filterByName={filterByName}
-              errorMessage={errorMessage}
-            />
-            <CharacterList characters={charactersFiltered} />
-          </>
-        }
-      />
-      <Route
-        path="/character/:characterId"
-        element={<CharacterDetail characterFound={characterFound} />}
-      />
-    </Routes>
+    <>
+      <Header logo={logo} />
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <>
+              <Filter
+                handleFilterName={handleFilterName}
+                filterByName={filterByName}
+                errorMessage={errorMessage}
+              />
+              <CharacterList characters={charactersFiltered} />
+            </>
+          }
+        />
+        <Route
+          path="/character/:characterId"
+          element={<CharacterDetail characterFound={characterFound} />}
+        />
+      </Routes>
+    </>
   );
 }
 

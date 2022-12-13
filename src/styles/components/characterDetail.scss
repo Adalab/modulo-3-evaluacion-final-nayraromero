@@ -1,0 +1,34 @@
+.section-detail {
+  display: flex;
+  flex-direction: column;
+}
+.detail-data {
+  color: white;
+  border: 3px solid #04b4c4;
+  border-radius: 20px;
+  border-style: double;
+  width: 40%;
+  margin: auto;
+  display: flex;
+  padding: 40px;
+  justify-content: space-around;
+}
+.detail-image {
+  width: 200px;
+  height: 200px;
+  border-radius: 20px;
+}
+.back-button {
+  border: 3px double #04b4c4;
+  border-radius: 10px;
+  border-style: double;
+  width: 120px;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  text-transform: uppercase;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  margin-top: 40px;
+  margin-left: 60%;
+}

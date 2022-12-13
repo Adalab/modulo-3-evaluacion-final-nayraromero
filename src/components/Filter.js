@@ -11,6 +11,7 @@ const Filter = (props) => {
   return (
     <>
       <form onSubmit={handleSubmit} className="form">
+        <label className="label-input">Search by name:</label>
         <input
           type="text"
           onChange={handleChange}
