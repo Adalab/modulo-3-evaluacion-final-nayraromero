@@ -1,0 +1,20 @@
+.label-input {
+  color: white;
+  font-size: 18px;
+  font-family: 'Rick-Morty';
+  text-transform: uppercase;
+  margin-right: 30px;
+}
+.form-input {
+  border: 3px double #04b4c4;
+  border-radius: 10px;
+  border-style: double;
+  width: 25%;
+  height: 25px;
+  color: white;
+  font-size: 18px;
+  font-family: 'Rick-Morty';
+}
+input:focus {
+  outline: none;
+}

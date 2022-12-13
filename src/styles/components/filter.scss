@@ -9,24 +9,7 @@
   display: flex;
   justify-content: center;
 }
-.label-input {
-  color: white;
-  font-size: 18px;
-  font-family: 'Rick-Morty';
-  text-transform: uppercase;
-  margin-right: 30px;
-}
-.form-input {
-  border: 2px solid cyan;
-  width: 25%;
-  height: 25px;
-  color: white;
-  font-size: 18px;
-  font-family: 'Rick-Morty';
-}
-input:focus {
-  outline: none;
-}
+
 .error-message {
   color: white;
   font-size: 18px;

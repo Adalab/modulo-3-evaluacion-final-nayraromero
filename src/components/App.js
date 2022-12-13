@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 import getDataFromAPI from '../services/api';
 import CharacterList from './CharacterList';
 import { Routes, Route, matchPath, useLocation } from 'react-router-dom';
-import Filter from './Filter';
+import Filters from './Filters';
 import CharacterDetail from './CharacterDetail';
 import Header from './Header';
 import logo from '../images/logo.png';
@@ -13,15 +13,26 @@ function App() {
   //VARIABLES ESTADO
   const [dataCharacter, setDataCharacter] = useState([]);
   const [filterByName, setFilterByName] = useState('');
+  const [filterBySpecie, setFilterBySpecie] = useState('');
 
-  //FUNCIONES
+  //FUNCIONES HANDLE
   const handleFilterName = (value) => {
     setFilterByName(value);
   };
-  const charactersFiltered = dataCharacter.filter((character) =>
-    character.name.toLowerCase().includes(filterByName.toLowerCase())
-  );
-
+  const handleFilterSpecie = (value) => {
+    setFilterBySpecie(value);
+  };
+  //FILTERS
+  const charactersFiltered = dataCharacter
+    .filter((character) =>
+      character.name.toLowerCase().includes(filterByName.toLowerCase())
+    )
+    .filter((character) => {
+      return filterBySpecie === 'all'
+        ? true
+        : character.species === filterBySpecie;
+    });
+  //ERROR FILTER BY NAME
   const errorMessage =
     charactersFiltered.length === 0
       ? `No hay ningún personaje que coincida con la palabra:
@@ -35,6 +46,7 @@ function App() {
     });
   }, []);
 
+  //USE LOCATION PARA URL DINÁMICA
   const { pathname } = useLocation();
 
   const dataUrl = matchPath('/character/:characterId', pathname);
@@ -44,6 +56,8 @@ function App() {
   const characterFound = dataCharacter.find(
     (character) => character.id === parseInt(characterId)
   );
+
+  //RETURN HTML
   return (
     <>
       <Header logo={logo} />
@@ -52,10 +66,12 @@ function App() {
           path="/"
           element={
             <>
-              <Filter
+              <Filters
                 handleFilterName={handleFilterName}
                 filterByName={filterByName}
                 errorMessage={errorMessage}
+                handleFilterSpecie={handleFilterSpecie}
+                filterBySpecie={filterBySpecie}
               />
               <CharacterList characters={charactersFiltered} />
             </>
