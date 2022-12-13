@@ -1,4 +1,5 @@
 import CharacterCard from './CharacterCard';
+import '../styles/components/characterList.scss';
 
 const CharacterList = ({ characters }) => {
   const charactersElements = characters.map((character) => {
@@ -6,7 +7,7 @@ const CharacterList = ({ characters }) => {
   });
   return (
     <>
-      <ul>{charactersElements}</ul>
+      <ul className="ul-characterList">{charactersElements}</ul>
     </>
   );
 };

@@ -1,3 +1,5 @@
+import '../styles/components/filter.scss';
+
 const Filter = (props) => {
   const handleChange = (ev) => {
     ev.preventDefault();
@@ -8,8 +10,13 @@ const Filter = (props) => {
   };
   return (
     <>
-      <form onSubmit={handleSubmit}>
-        <input type="text" onChange={handleChange} value={props.filterByName} />
+      <form onSubmit={handleSubmit} className="form">
+        <input
+          type="text"
+          onChange={handleChange}
+          value={props.filterByName}
+          className="form-input"
+        />
       </form>
       <p>{props.errorMessage}</p>
     </>

@@ -1,0 +1,15 @@
+.form {
+  display: flex;
+  justify-content: center;
+}
+
+.form-input {
+  border: 2px solid cyan;
+  width: 25%;
+  height: 25px;
+  color: white;
+  font-size: 18px;
+}
+input:focus {
+  outline: none;
+}

@@ -1,4 +1,5 @@
-// import '../styles/App.scss';
+import '../styles/components/main.scss';
+import '../styles/core/reset.scss';
 import { useEffect, useState } from 'react';
 import getDataFromAPI from '../services/api';
 import CharacterList from './CharacterList';
