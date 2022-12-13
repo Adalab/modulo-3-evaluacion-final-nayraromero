@@ -13,6 +13,7 @@ const getDataFromAPI = () => {
           episodes: character.episode.length,
         };
       });
+      cleanData.sort((x, y) => x.name.localeCompare(y.name));
       return cleanData;
     });
 };
