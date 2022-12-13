@@ -19,7 +19,7 @@ const Filter = (props) => {
           className="form-input"
         />
       </form>
-      <p>{props.errorMessage}</p>
+      <p className="error-message">{props.errorMessage}</p>
     </>
   );
 };

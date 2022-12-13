@@ -25,7 +25,7 @@ function App() {
   const errorMessage =
     charactersFiltered.length === 0
       ? `No hay ningún personaje que coincida con la palabra:
-        ${filterByName.toLowerCase()}`
+      ${filterByName.toLowerCase()}`
       : null;
 
   //USE EFFECT
