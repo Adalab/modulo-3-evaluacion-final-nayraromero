@@ -1,19 +1,22 @@
+//styles
 import '../styles/components/main.scss';
 import '../styles/core/reset.scss';
+//useEffect + Routes
 import { useEffect, useState } from 'react';
-import getDataFromAPI from '../services/api';
-import CharacterList from './CharacterList';
 import { Routes, Route, matchPath, useLocation } from 'react-router-dom';
+//components
+import getDataFromAPI from '../services/api';
+import logo from '../images/logo.png';
+import CharacterList from './CharacterList';
 import Filters from './Filters';
 import CharacterDetail from './CharacterDetail';
 import Header from './Header';
-import logo from '../images/logo.png';
 
 function App() {
   //VARIABLES ESTADO
   const [dataCharacter, setDataCharacter] = useState([]);
   const [filterByName, setFilterByName] = useState('');
-  const [filterBySpecie, setFilterBySpecie] = useState('');
+  const [filterBySpecie, setFilterBySpecie] = useState('all');
 
   //FUNCIONES HANDLE
   const handleFilterName = (value) => {
