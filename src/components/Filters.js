@@ -17,7 +17,7 @@ const Filters = (props) => {
         />
         <FilterBySpecie
           handleFilterSpecie={props.handleFilterSpecie}
-          FilterBySpecie={props.filterBySpecie}
+          filterBySpecie={props.filterBySpecie}
         />
       </form>
       <p className="error-message">{props.errorMessage}</p>
