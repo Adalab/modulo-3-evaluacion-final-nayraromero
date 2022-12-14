@@ -1,5 +1,6 @@
 import CharacterCard from './CharacterCard';
 import '../styles/components/characterList.scss';
+import PropTypes from 'prop-types';
 
 const CharacterList = ({ characters }) => {
   const charactersElements = characters.map((character) => {
@@ -11,4 +12,9 @@ const CharacterList = ({ characters }) => {
     </>
   );
 };
+
+CharacterList.propTypes = {
+  id: PropTypes.number,
+};
+
 export default CharacterList;

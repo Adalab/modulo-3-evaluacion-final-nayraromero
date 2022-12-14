@@ -1,9 +1,10 @@
 //styles
 import '../styles/components/main.scss';
 import '../styles/core/reset.scss';
-//useEffect + Routes
+//useEffect + Routes + ls
 import { useEffect, useState } from 'react';
 import { Routes, Route, matchPath, useLocation } from 'react-router-dom';
+// import ls from '../services/localStorage';
 //components
 import getDataFromAPI from '../services/api';
 import logo from '../images/logo.png';
@@ -17,12 +18,18 @@ function App() {
   const [dataCharacter, setDataCharacter] = useState([]);
   const [filterByName, setFilterByName] = useState('');
   const [filterBySpecie, setFilterBySpecie] = useState('all');
+  // const [filterByName, setFilterByName] = useState(ls.get('filterByName', ''));
+  // const [filterBySpecie, setFilterBySpecie] = useState(
+  //   ls.get('filterBySpecie', 'all')
+  // );
 
   //FUNCIONES HANDLE
   const handleFilterName = (value) => {
+    // ls.set('filterByName', value);
     setFilterByName(value);
   };
   const handleFilterSpecie = (value) => {
+    // ls.set('filterBySpecie', value);
     setFilterBySpecie(value);
   };
   //FILTERS

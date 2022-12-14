@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import '../styles/components/characterCard.scss';
+import PropTypes from 'prop-types';
 
 const CharacterCard = ({ character }) => {
   return (
@@ -17,4 +18,12 @@ const CharacterCard = ({ character }) => {
     </li>
   );
 };
+
+CharacterCard.propTypes = {
+  id: PropTypes.number,
+  photo: PropTypes.string,
+  name: PropTypes.string,
+  species: PropTypes.string,
+};
+
 export default CharacterCard;

@@ -1,5 +1,6 @@
 import '../styles/components/characterDetail.scss';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 const CharacterDetail = ({ characterFound }, props) => {
   if (characterFound === undefined) {
@@ -35,4 +36,14 @@ const CharacterDetail = ({ characterFound }, props) => {
     );
   }
 };
+
+CharacterDetail.propTypes = {
+  photo: PropTypes.string,
+  name: PropTypes.string,
+  status: PropTypes.string,
+  species: PropTypes.string,
+  origin: PropTypes.string,
+  episodes: PropTypes.string,
+};
+
 export default CharacterDetail;
